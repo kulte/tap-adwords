@@ -13,14 +13,15 @@ setup(name='tap-adwords',
           'singer-python==5.1.5',
           'requests==2.20.0',
           'googleads==13.0.0',
-          'zeep==3.1.0', # googleads dependency, pinned to 3.1.0 (tested version)
+          # googleads dependency, pinned to 3.1.0 (tested version)
+          'zeep==3.1.0',
       ],
       entry_points='''
           [console_scripts]
           tap-adwords=tap_adwords:main
       ''',
       packages=['tap_adwords'],
-      package_data = {
+      package_data={
           'tap_adwords/schemas': [
               "accounts.json",
               "ad_groups.json",
@@ -35,4 +36,4 @@ setup(name='tap-adwords',
           ],
       },
       include_package_data=True,
-)
+      )
